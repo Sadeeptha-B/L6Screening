@@ -13,24 +13,19 @@ Simply run the file with `node task1.js`
 
 ## Task 2
 
-task2.js makes use of Google API client libraries and the Inquirer.js package. This is the recommended approach by Google for accessing Google Workspace APIs. Therefore, fetch the required dependencies with
+**task2.js makes use of Google API client libraries and the Inquirer.js package**. This is the recommended approach by Google for accessing Google Workspace APIs. Therefore, fetch the required dependencies with `npm install`
 
-`npm install`
-
-To run task2.js, a `credentials.json` file containing tjhe credentials for the Google Cloud Project must be provided at the root of the project. You can setup your own Google
-Cloud Project to access Calendar APIs by following the instructions at
+**To run task2.js, a `credentials.json` file containing the credentials for the Google Cloud Project must be provided at the root of the project.** You can setup your own Google Cloud Project to access Calendar APIs by following the instructions at
 
 - https://developers.google.com/workspace/guides/get-started
 - https://developers.google.com/calendar/api/quickstart/nodejs
 
-The credentials.json file for my Google Cloud Project will be provided by email, you can use this instead.
-
-My Google Cloud Project is listed in Production mode. However, this means that the Project must be verified by Google since the app requires accessing restricted scopes. Therefore, it is possible that Google would block the request since the app has not been verified.
-
-If the request is not blocked, You will be redirected to a warning page as follows
-![Auth Page](/images/auth.png "Auth warning.") You can complete your authentication by clicking "Go to FreeBusyBasic (unsafe)". However, if the request is blocked, you will have to setup your own Google Cloud Project following the instructions above. 
-
 After installing the dependencies and providing `credentials.json`, simply run the file with `node task2.js`
+
+The credentials.json file for my Google Cloud Project will be provided by email, you can use this instead. However, please note that my Google Cloud Project is listed in Production mode. This means that the Project must be verified by Google since the app requires accessing restricted scopes. Therefore, it is possible that Google would block the request since the app has not been verified.
+
+If the request is not blocked, You will be redirected to a warning page as follows when running the script.
+![Auth Page](/images/auth.png "Auth warning.") You can complete your authentication by clicking "Go to FreeBusyBasic (unsafe)". However, if the request is blocked, you will have to setup your own Google Cloud Project following the instructions above. 
 
 ## Task 3
 
