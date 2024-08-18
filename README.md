@@ -20,7 +20,7 @@ Simply run the file with `node task1.js`
 - https://developers.google.com/workspace/guides/get-started
 - https://developers.google.com/calendar/api/quickstart/nodejs
 
-After installing the dependencies and providing `credentials.json`, simply run the file with `node task2.js`
+**After installing the dependencies and providing `credentials.json`, simply run the file with `node task2.js`**
 
 The credentials.json file for my Google Cloud Project will be provided by email, you can use this instead. However, please note that my Google Cloud Project is listed in Production mode. This means that the Project must be verified by Google since the app requires accessing restricted scopes. Therefore, it is possible that Google would block the request since the app has not been verified.
 
@@ -32,5 +32,5 @@ If the request is not blocked, You will be redirected to a warning page as follo
 Copy paste the script to the Online SQL compiler at https://www.programiz.com/sql/online-compiler/, which provides a SQLite DB backend without being reliant on WebSQL.
 
 Though the instructions state that the file should be executable at https://www.w3schools.com/sql/trysql.asp?filename=trysql_select_columns/. This is no longer possible since the Try-SQL editor at w3Schools uses WebSQL which is no longer supported
-on chromium browsers. Further details can be found in the task3.sql script.
+on modern browsers. Further details can be found in the task3.sql script.
 
