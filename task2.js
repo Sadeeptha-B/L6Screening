@@ -2,13 +2,44 @@
 /* 
 Returns an array of free/busy intervals in a given time period for any shared calendar
    
-Input: Shared google calendar ID, Time period (starting and ending moments)
+Inputs: Shared google calendar ID, Time period (starting and ending moments)
 Output: Array of busy intervals
 */
-const { google } = require("googleapis");
+const path = require("path");
+const process = require("process");
 const input = require("@inquirer/input").default;
-const authorize = require("./auth.js");
+const { authenticate } = require("@google-cloud/local-auth");
+const { google } = require("googleapis");
 
+const SCOPES = ["https://www.googleapis.com/auth/calendar.readonly"];
+const CREDENTIALS_PATH = path.join(process.cwd(), "credentials.json");
+
+/**
+ * Authenticate to access calendar.
+ * Based on the quickstart logic https://developers.google.com/calendar/api/quickstart/nodejs
+ * The authenticate method provided by google-cloud/local-auth ran successfully on a Windows
+ * machine but had issues running with a Manjaro Linux setup
+ *  
+*/
+async function authorize() {
+  console.log("Starting authentication....");
+  client = await authenticate({
+    scopes: SCOPES,
+    keyfilePath: CREDENTIALS_PATH,
+  });
+  console.log("Authentication successful.")
+  return client;
+}
+
+
+/**
+ * Ask for inputs
+ * ====================================================
+ * Example inputs:
+ * calendarId: primary,
+ * timeMin: 2024-08-16T06:17:15.780Z
+ * timeMax: 2024-08-18T06:17:15.780Z,
+ */
 async function requestInputs() {
   const calendarId = await input({
     message: "Enter your Calendar ID",
@@ -56,18 +87,15 @@ async function listFreebusy(auth, [calendarId, timeMin, timeMax]) {
     },
   });
   const busyIntervals = res.data.calendars[calendarId].busy;
+  if (!busyIntervals || busyIntervals.length === 0) {
+    console.log('No busy intervals found.');
+    return;
+  }
   console.log("Array of busy intervals: ");
   console.log(busyIntervals);
 }
 
-// Ask for inputs
 async function main() {
-  /**
-   * Example inputs:
-   * calendarId: primary,
-   * timeMin: 2024-08-16T06:17:15.780Z
-   * timeMax: 2024-08-18T06:17:15.780Z,
-   */
   const inputs = await requestInputs();
   authorize()
     .then((client) => listFreebusy(client, inputs))
