@@ -22,8 +22,8 @@ const CREDENTIALS_PATH = path.join(process.cwd(), "credentials.json");
 /**
  * Authenticate to access calendar.
  * Based on the quickstart logic https://developers.google.com/calendar/api/quickstart/nodejs
- * The authenticate method provided by google-cloud/local-auth ran successfully on a Windows
- * machine but had issues running with a Manjaro Linux setup
+ * The authenticate method is provided by google-cloud/local-auth. 
+ * This should trigger your browser to request authentication.
 */
 async function authorize() {
   console.log("Starting authentication....");

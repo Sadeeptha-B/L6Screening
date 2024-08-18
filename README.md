@@ -22,10 +22,16 @@ Simply run the file with `node task1.js`
 
 **After installing the dependencies and providing `credentials.json`, simply run the file with `node task2.js`**
 
-The credentials.json file for my Google Cloud Project will be provided by email, you can use this instead. However, please note that my Google Cloud Project is listed in Production mode. This means that the Project must be verified by Google since the app requires accessing restricted scopes. Therefore, it is possible that Google would block the request since the app has not been verified.
+<blockquote>
+The credentials.json file for my Google Cloud Project will be provided by email, you can use this instead. However, please note that my Google Cloud Project is listed in Production mode. This means that the Project must be verified by Google since the app requires accessing restricted scopes. Therefore, it is possible that Google would block the request since the app has not been verified. 
 
 If the request is not blocked, You will be redirected to a warning page as follows when running the script.
-![Auth Page](/images/auth.png "Auth warning.") You can complete your authentication by clicking "Go to FreeBusyBasic (unsafe)". However, if the request is blocked, you will have to setup your own Google Cloud Project following the instructions above. 
+
+![Auth Page](/images/auth.png "Auth warning.") 
+
+You can complete your authentication by clicking "Go to FreeBusyBasic (unsafe)". However, if the request is blocked, you will have to setup your own Google Cloud Project following the instructions above. 
+</blockquote>
+
 
 ## Task 3
 
