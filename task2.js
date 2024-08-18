@@ -1,6 +1,6 @@
 // 2.1
 /* 
-Returns an array of free/busy intervals in a given time period for any shared calendar
+Returns an array of busy intervals in a given time period for any shared calendar
 Written using Google's client libraries for accessing calendar APIs since it is the 
 recommended approach by Google. 
 
@@ -104,7 +104,6 @@ async function main() {
   authorize()
     .then((client) => listFreebusy(client, inputs))
     .catch(console.error);
-
 }
 
 main();

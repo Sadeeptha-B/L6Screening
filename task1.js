@@ -15,13 +15,20 @@ Date.prototype.daysTo = function (d2){
 
 const d1 = new Date('2024-01-17T03:24:00');
 const d2 = new Date('2024-01-19T03:17:00')
-console.log(d1.daysTo(d2))
-console.log(d2.daysTo(d1))
+
+
+const outputDateDiff = (d1, d2) =>{
+    console.log(`Days between ${d1.toLocaleString()} and ${d2.toLocaleString()}: ${d1.daysTo(d2)}`)
+}
+
+outputDateDiff(d1, d2)
+outputDateDiff(d2, d1)
+console.log('------------------------------')
 
 
 // 1.2
 // Using inbuilt sort as advised by email
-// Sorting ascending
+// Sorted ascending
 let input = [
     {amount: 10000, quantity: 10}, 
     {amount: 3, quantity: 20}, 
@@ -38,16 +45,21 @@ function orderSalesByTotal(arr){
     return res
 }
 
+console.log("Sorted sales array: ")
 console.log(orderSalesByTotal(input))
+console.log('------------------------------')
+
 
 // 1.3
 // Projected object is the intersection of the source object and the proto Obj
 function ObjectProjection(source, proto){
     let res= {}
+    // Source is null or primitive. Return as is.
     if (!source || !(source instanceof Object)){
         return source;
     }
 
+    // Proto is null, return source to terminate. 
     if (!proto){
         return {...source};
     }
@@ -83,14 +95,7 @@ const proto = {
     }
 }
 
+console.log("Object projection outputs: ")
 console.log(ObjectProjection(src, proto))
 console.log(ObjectProjection(proto, src))
 
-// const res = {
-//     prop11: {
-//         prop22: {
-//             prop31: 31,
-//             prop32: 32
-//         }
-//     }
-// }

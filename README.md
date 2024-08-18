@@ -13,7 +13,7 @@ Simply run the file with `node task1.js`
 
 ## Task 2
 
-**task2.js makes use of Google API client libraries and the Inquirer.js package**. This is the recommended approach by Google for accessing Google Workspace APIs. Therefore, fetch the required dependencies with `npm install`
+**task2.js makes use of Google API client libraries**. This is the recommended approach by Google for accessing Google Workspace APIs. Therefore, fetch the required dependencies with `npm install`
 
 **To run task2.js, a `credentials.json` file containing the credentials for the Google Cloud Project must be provided at the root of the project.** You can setup your own Google Cloud Project to access Calendar APIs by following the instructions at
 
