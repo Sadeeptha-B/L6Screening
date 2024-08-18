@@ -27,7 +27,7 @@ Assumptions and Conventions:
 - Datetime inputs are inserted directly without additional parsing
 */
 DROP TABLE IF EXISTS user;
-DROP TABLE IF EXISTS group1;
+DROP TABLE IF EXISTS group1; -- group table is named as group1 since group is a reserved keyword in sql
 DROP TABLE IF EXISTS groupMembership;
 
 CREATE TABLE user (

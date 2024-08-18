@@ -1,8 +1,13 @@
 // 2.1
 /* 
 Returns an array of free/busy intervals in a given time period for any shared calendar
-   
-Inputs: Shared google calendar ID, Time period (starting and ending moments)
+Written using Google's client libraries for accessing calendar APIs since it is the 
+recommended approach by Google. 
+
+Inputs: 
+  calendarId - Valid calendar ID for user being authenticated
+  startTime - A dateString of ISO format Eg- 2024-08-16T06:17:15.780Z
+  endTime - A dateString of ISO format Eg- 2024-08-18T06:17:15.780Z
 Output: Array of busy intervals
 */
 const path = require("path");
@@ -19,7 +24,6 @@ const CREDENTIALS_PATH = path.join(process.cwd(), "credentials.json");
  * Based on the quickstart logic https://developers.google.com/calendar/api/quickstart/nodejs
  * The authenticate method provided by google-cloud/local-auth ran successfully on a Windows
  * machine but had issues running with a Manjaro Linux setup
- *  
 */
 async function authorize() {
   console.log("Starting authentication....");
