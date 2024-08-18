@@ -23,9 +23,9 @@ Cloud Project to access Calendar APIs by following the instructions at
 - https://developers.google.com/workspace/guides/get-started
 - https://developers.google.com/calendar/api/quickstart/nodejs
 
-> The credentials.json file for my Google Cloud Project will be provided by email, you can use this instead.
+The credentials.json file for my Google Cloud Project will be provided by email, you can use this instead.
 
-> My Google Cloud Project is listed in Production mode. However, this means that the Project must be verified by Google since the app requires accessing restricted scopes. Therefore, it is possible that Google would block the request since the app has not been verified.
+My Google Cloud Project is listed in Production mode. However, this means that the Project must be verified by Google since the app requires accessing restricted scopes. Therefore, it is possible that Google would block the request since the app has not been verified.
 
 If the request is not blocked, You will be redirected to a warning page as follows
 ![Auth Page](/images/auth.png "Auth warning.") You can complete your authentication by clicking "Go to FreeBusyBasic (unsafe)". However, if the request is blocked, you will have to setup your own Google Cloud Project following the instructions above. 
