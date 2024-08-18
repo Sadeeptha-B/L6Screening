@@ -1,19 +1,17 @@
 # L6 Screening
 
-Contains the files for task1, task2 and task3 respectively. The first two task files are written in JavaScript while the third file is an SQL script written for the SQLite db engine. Further details can be found under each file.
+Contains the files for task1, task2 and task3 respectively. The first two task files are written in JavaScript while the third file is an SQL script written for the SQLite DB Engine. Further details can be found under each file.
 
-## Running the files
+# Running the files
 
 The JavaScript files can be run on Node.js LTS (v20.16.0) at the time of writing.
 
-### Task 1
+## Task 1
 
 task1.js requires no dependencies to run.
-Simply run the file with
+Simply run the file with `node task1.js`
 
-` node task1.js`
-
-### Task 2
+## Task 2
 
 task2.js makes use of Google API client libraries and the Inquirer.js package. This is the recommended approach by Google for accessing Google Workspace APIs. Therefore, fetch the required dependencies with
 
@@ -34,7 +32,7 @@ If the request is not blocked, You will be redirected to a warning page as follo
 
 After installing the dependencies and providing `credentials.json`, simply run the file with `node task2.js`
 
-### Task 3
+## Task 3
 
 Copy paste the script to the Online SQL compiler at https://www.programiz.com/sql/online-compiler/, which provides a SQLite DB backend without being reliant on WebSQL.
 
