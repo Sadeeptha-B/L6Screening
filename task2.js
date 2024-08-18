@@ -30,6 +30,7 @@ async function loadSavedCredentialsIfExist() {
     const credentials = JSON.parse(content);
     return google.auth.fromJSON(credentials);
   } catch (err) {
+    console.log("Token file not found. Requesting authorization")
     return null;
   }
 }
@@ -41,6 +42,7 @@ async function loadSavedCredentialsIfExist() {
  * @return {Promise<void>}
  */
 async function saveCredentials(client) {
+  console.log('save cred')
   const content = await fs.readFile(CREDENTIALS_PATH);
   const keys = JSON.parse(content);
   const key = keys.installed || keys.web;
@@ -58,14 +60,18 @@ async function saveCredentials(client) {
  *
  */
 async function authorize() {
+  console.log("Starting authorization flow")
   let client = await loadSavedCredentialsIfExist();
   if (client) {
     return client;
   }
+  console.log("Authenticating...")
+  console.log(SCOPES, CREDENTIALS_PATH)
   client = await authenticate({
     scopes: SCOPES,
     keyfilePath: CREDENTIALS_PATH,
   });
+  console.log("Authentication successful")
   if (client.credentials) {
     await saveCredentials(client);
   }
